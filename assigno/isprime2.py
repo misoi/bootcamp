@@ -1,18 +1,15 @@
-
-def prime(x):
-	if x<2:
-		return False
-	if x == 2:
-		return True
-	if x%2 == 0:
-		return False
-	if not x & 1:
-		return False
-
-	for n in range(3, int(x**0.5)+1, 2):
-		if x%n == 0:
-			return False
-	return True
-print prime(95)
-
-
+class PrimeChecker(object):
+  
+  def __init__(self, number = "") :
+    
+    self.number = number
+  def is_prime(self):
+    if self.number == "":
+      return False
+    elif (int(self.number)) > 1:
+      for i in range(2, (int(self.number))):
+        if (int(self.number))%i == 0:
+          return False
+    
+      return True
+    
